@@ -92,15 +92,15 @@ async function getPlaceInformation(placeId) {
 }
 
 function buildRestaurantUrl(locationId, offset) {
-    return `https://www.tripadvisor.com/RestaurantSearch?Action=PAGE&geo=${locationId}&ajax=1&sortOrder=relevance&${offset ? `o=a${offset}` : ''}&availSearchEnabled=false`;
+    return `https://www.tripadvisor.com.vn/RestaurantSearch?Action=PAGE&geo=${locationId}&ajax=1&sortOrder=relevance&${offset ? `o=a${offset}` : ''}&availSearchEnabled=false`;
 }
 
 function buildHotelUrl(locationId, offset) {
-    return `https://www.tripadvisor.com/Hotels-g${locationId}-${offset ? `oa${offset}` : ''}.html`;
+    return `https://www.tripadvisor.com.vn/Hotels-g${locationId}-${offset ? `oa${offset}` : ''}.html`;
 }
 
 function buildAttractionsUrl(locationId) {
-    return `https://www.tripadvisor.com/Attractions-g${locationId}`;
+    return `https://www.tripadvisor.com.vn/Attractions-g${locationId}`;
 }
 
 async function callForAttractionList(locationId, limit = 10, offset = 0) {

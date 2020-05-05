@@ -47,7 +47,7 @@ Apify.main(async () => {
     global.LAST_REVIEW_DATE = lastReviewDate;
     global.CHECKIN_DATE = checkInDate;
     global.PROXY_GROUPS = input.proxyConfiguration && input.proxyConfiguration.apifyProxyGroups;
-    global.LANGUAGE = 'vi';
+    global.LANGUAGE = input.language || 'vi';
 
     let requestList;
     const generalDataset = await Apify.openDataset();
@@ -67,12 +67,12 @@ Apify.main(async () => {
     if (restaurantId) {
         log.debug(`Processing restaurant ${restaurantId}`);
         requestList = new Apify.RequestList({
-            sources: [{ url: 'https://www.tripadvisor.com', userData: { restaurantId, restaurantDetail: true } }],
+            sources: [{ url: 'https://www.tripadvisor.com.vn', userData: { restaurantId, restaurantDetail: true } }],
         });
     } else if (hotelId) {
         log.debug(`Processing hotel ${restaurantId}`);
         requestList = new Apify.RequestList({
-            sources: [{ url: 'https://www.tripadvisor.com', userData: { hotelId, hotelDetail: true } }],
+            sources: [{ url: 'https://www.tripadvisor.com.vn', userData: { hotelId, hotelDetail: true } }],
         });
     }
 
