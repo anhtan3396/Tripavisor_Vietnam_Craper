@@ -37,7 +37,7 @@ Apify.main(async () => {
         includeHotels = true,
         includeReviews = true,
         includeAttractions = true,
-        lastReviewDate = '2010-01-01',
+        lastReviewDate = '2020-05-01',
         hotelId,
         restaurantId,
         checkInDate,
@@ -47,7 +47,7 @@ Apify.main(async () => {
     global.LAST_REVIEW_DATE = lastReviewDate;
     global.CHECKIN_DATE = checkInDate;
     global.PROXY_GROUPS = input.proxyConfiguration && input.proxyConfiguration.apifyProxyGroups;
-    global.LANGUAGE = input.language || 'en_USA';
+    global.LANGUAGE = input.language || 'vi_VN';
 
     let requestList;
     const generalDataset = await Apify.openDataset();
@@ -98,7 +98,7 @@ Apify.main(async () => {
                 const promises = [];
                 for (let i = 0; i <= maxOffset; i += LIMIT) {
                     promises.push(() => requestQueue.addRequest({
-                        url: `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/hotels?currency=CZK&lang=${global.LANGUAGE}&limit=${LIMIT}&offset=${i}`,
+                        url: `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/hotels?currency=VND&lang=${global.LANGUAGE}&limit=${LIMIT}&offset=${i}`,
                         userData: { hotelList: true, offset: i, limit: LIMIT },
                     }));
                     log.debug(`Adding location with ID: ${locationId} Offset: ${i.toString()}`);
