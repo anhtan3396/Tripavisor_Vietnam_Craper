@@ -47,7 +47,7 @@ Apify.main(async () => {
     global.LAST_REVIEW_DATE = lastReviewDate;
     global.CHECKIN_DATE = checkInDate;
     global.PROXY_GROUPS = input.proxyConfiguration && input.proxyConfiguration.apifyProxyGroups;
-    global.LANGUAGE = input.language || 'vi_VN';
+    global.LANGUAGE = input.language || 'vi';
 
     let requestList;
     const generalDataset = await Apify.openDataset();
