@@ -43,6 +43,7 @@ async function processRestaurant(placeInfo, client, dataset) {
         isClosed: placeInfo.is_closed,
         isLongClosed: placeInfo.is_long_closed,
         phone: placeInfo.phone,
+        photo: placeInfo.photo,
         address: placeInfo.address,
         email: placeInfo.email,
         cuisine: placeInfo.cuisine && placeInfo.cuisine.map(cuisine => cuisine.name),
