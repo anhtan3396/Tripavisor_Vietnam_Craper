@@ -8,7 +8,7 @@ async function processHotel(placeInfo, client, dataset) {
     const { location_id: id } = placeInfo;
     let reviews = [];
     let placePrices;
-    log.info(placeInfo.photo);
+    log.info(placeInfo.photo.images.original.url);
     
     try {
       //  placePrices = await getPlacePrices(id, randomDelay);
@@ -46,6 +46,7 @@ async function processHotel(placeInfo, client, dataset) {
         hotelClass: placeInfo.hotel_class,
         hotelClassAttribution: placeInfo.hotel_class_attribution,
         phone: placeInfo.phone,
+        photo: placeInfo.photo,
         address: placeInfo.address,
         email: placeInfo.email,
         amenities: placeInfo.amenities && placeInfo.amenities.map(amenity => amenity.name),
