@@ -8,7 +8,7 @@ async function processHotel(placeInfo, client, dataset) {
     const { location_id: id } = placeInfo;
     let reviews = [];
     let placePrices;
-    log.info(placeInfo);
+    log.info(placeInfo.photo);
     
     try {
       //  placePrices = await getPlacePrices(id, randomDelay);
