@@ -189,10 +189,10 @@ function getRequestListSources(locationId, includeHotels, includeRestaurants, in
 }
 
 async function getClient() {
-    const response = await axios.get('https://www.tripadvisor.com.vn/', getAgentOptions());
+    const response = await axios.get('https://www.tripadvisor.com/', getAgentOptions());
     const $ = cheerio.load(response.data);
     return axios.create({
-        baseURL: 'https://www.tripadvisor.com.vn/data/graphql',
+        baseURL: 'https://www.tripadvisor.co.uk/data/graphql',
         headers: {
             'x-requested-by': getSecurityToken($),
             Cookie: getCookies(response),
