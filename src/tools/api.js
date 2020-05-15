@@ -116,7 +116,7 @@ function buildAttractionsUrl(locationId) {
 }
 
 async function callForAttractionList(locationId, session, limit = 10, offset = 0) {
-    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/attractions?limit=${limit}&offset=${offset}`;
+    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/attractions?lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
     const response = await axios.get(
         url,
         { headers: { 'X-TripAdvisor-API-Key': API_KEY, Cookie: session.getCookieString(url) }, ...getAgentOptions(session) },
