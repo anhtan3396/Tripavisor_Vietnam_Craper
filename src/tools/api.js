@@ -72,7 +72,6 @@ async function getPlacePrices(placeId, delay, session) {
         {
             headers: {
                 'X-TripAdvisor-API-Key': API_KEY,
-                Cookie: session.getCookieString(url),
             },
             ...getAgentOptions(session),
         },
