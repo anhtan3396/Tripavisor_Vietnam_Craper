@@ -10,7 +10,7 @@ async function processHotel(placeInfo, client, dataset) {
     let placePrices;
 
     try {
-      //  placePrices = await getPlacePrices(id, randomDelay);
+       placePrices = await getPlacePrices(id, randomDelay);
     } catch (e) {
         log.warning('Hotels: Could not get place prices', { errorMessage: e });
     }
