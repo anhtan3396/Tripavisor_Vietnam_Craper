@@ -30,10 +30,7 @@ async function processRestaurant(placeInfo, client, dataset) {
     }
     if (!placeInfo) {
         return;
-    }
-    
-    
-    const place = {
+    }const place = {
         id: placeInfo.location_id,
         type: 'RESTAURANT',
         name: placeInfo.name,
