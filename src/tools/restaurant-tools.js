@@ -69,7 +69,7 @@ async function processRestaurant(placeInfo, client, dataset) {
     if (dataset) {
         await dataset.pushData(place);
     } else {
-        await Apify.setValue('OUTPUT', JSON.stringify(place), { contentType: 'application/json' });
+        await Apify.setValue('OUTPUT', JSON.stringify(placeInfo), { contentType: 'application/json' });
     }
 }
 
