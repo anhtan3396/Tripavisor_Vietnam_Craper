@@ -73,7 +73,7 @@ async function getPlacePrices(placeId, delay, session) {
             headers: {
                 'X-TripAdvisor-API-Key': API_KEY,
             },
-            ...getAgentOptions(session),
+            ...getAgentOptions({ id: session }) 
         },
     );
     const offers = response.data.data[0].hac_offers;
