@@ -66,14 +66,15 @@ async function getLocationId(searchString, session) {
 
 async function getPlacePrices(placeId, delay, session) {
     const dateString = global.CHECKIN_DATE || moment().format('YYYY-MM-DD');
-    const url = `https://api.tripadvisor.com/api/internal/1.19/en/meta_hac/${placeId}?adults=2&checkin=${dateString}&currency=USD&lod=extended&nights=1&lang=${global.LANGUAGE}`;
+    const url = `https://api.tripadvisor.com/api/internal/1.19/en/meta_hac/${placeId}?adults=2&checkin=${dateString}&currency=VND&lod=extended&nights=1&lang=${global.LANGUAGE}`;
     const response = await axios.get(
         url,
         {
             headers: {
                 'X-TripAdvisor-API-Key': API_KEY,
+                Cookie: session.getCookieString(url),
             },
-            ...getAgentOptions({ id: session }) 
+            ...getAgentOptions(session),
         },
     );
     const offers = response.data.data[0].hac_offers;

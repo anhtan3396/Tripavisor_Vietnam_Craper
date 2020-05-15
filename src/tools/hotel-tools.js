@@ -10,7 +10,7 @@ async function processHotel(placeInfo, client, dataset) {
     let placePrices;
 
     try {
-       placePrices = await getPlacePrices(id, randomDelay);
+    //    placePrices = await getPlacePrices(id, randomDelay);
     } catch (e) {
         log.warning('Hotels: Could not get place prices', { errorMessage: e });
     }
@@ -48,7 +48,7 @@ async function processHotel(placeInfo, client, dataset) {
         address: placeInfo.address,
         email: placeInfo.email,
         amenities: placeInfo.amenities && placeInfo.amenities.map(amenity => amenity.name),
-        prices,
+        price:placeInfo.price,
         latitude: placeInfo.latitude,
         longitude: placeInfo.longitude,
         webUrl: placeInfo.web_url,
