@@ -31,6 +31,9 @@ async function processRestaurant(placeInfo, client, dataset) {
     if (!placeInfo) {
         return;
     }
+    
+    console.log(JSON.stringify(placeInfo));
+    
     const place = {
         id: placeInfo.location_id,
         type: 'RESTAURANT',
