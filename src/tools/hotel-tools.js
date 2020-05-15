@@ -40,6 +40,7 @@ async function processHotel(placeInfo, client, dataset) {
         awards: placeInfo.awards && placeInfo.awards.map(award => ({ year: award.year, name: award.display_name })),
         rankingPosition: placeInfo.ranking_position,
         priceLevel: placeInfo.price_level,
+        price:placeInfo.price,
         category: placeInfo.ranking_category,
         rating: placeInfo.rating,
         hotelClass: placeInfo.hotel_class,
