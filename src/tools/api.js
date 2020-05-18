@@ -138,7 +138,7 @@ async function callForAttractionReview(locationId, session, limit = 10, offset =
 }
 
 async function getReviewTagsForLocation(locationId, session, limit = LIMIT, offset = 0) {
-    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/keywords?currency=VND&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
+    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/keywords?currency=USD&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
     const response = await axios.get(
         url,
         { headers: { 'X-TripAdvisor-API-Key': API_KEY, Cookie: session.getCookieString(url) }, ...getAgentOptions(session) },
@@ -149,7 +149,7 @@ async function getReviewTagsForLocation(locationId, session, limit = LIMIT, offs
 }
 
 async function callForRestaurantList(locationId, session, limit = LIMIT, offset = 0) {
-    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/restaurants?currency=VND&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
+    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/restaurants?currency=USD&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
     const response = await axios.get(
         url,
         { headers: { 'X-TripAdvisor-API-Key': API_KEY, Cookie: session.getCookieString(url) }, ...getAgentOptions(session) },
@@ -160,7 +160,7 @@ async function callForRestaurantList(locationId, session, limit = LIMIT, offset 
 }
 
 async function callForHotelList(locationId, session, limit = LIMIT, offset = 0) {
-    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/hotels?currency=VND&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
+    const url = `https://api.tripadvisor.com/api/internal/1.14/location/${locationId}/hotels?currency=USD&lang=${global.LANGUAGE}&limit=${limit}&offset=${offset}`;
     const response = await axios.get(
         url,
         { headers: { 'X-TripAdvisor-API-Key': API_KEY, Cookie: session.getCookieString(url) }, ...getAgentOptions(session) },
