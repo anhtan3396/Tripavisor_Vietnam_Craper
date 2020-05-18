@@ -30,34 +30,7 @@ async function processRestaurant(placeInfo, client, dataset) {
     }
     if (!placeInfo) {
         return;
-    }const place = {
-        id: placeInfo.location_id,
-        type: 'RESTAURANT',
-        name: placeInfo.name,
-        awards: placeInfo.awards && placeInfo.awards.map(award => ({ year: award.year, name: award.display_name })),
-        rankingPosition: placeInfo.ranking_position,
-        priceLevel: placeInfo.price_level,
-        price:placeInfo.price,
-        category: placeInfo.ranking_category,
-        rating: placeInfo.rating,
-        isClosed: placeInfo.is_closed,
-        isLongClosed: placeInfo.is_long_closed,
-        phone: placeInfo.phone,
-        photo: placeInfo.photo,
-        address: placeInfo.address,
-        email: placeInfo.email,
-        cuisine: placeInfo.cuisine && placeInfo.cuisine.map(cuisine => cuisine.name),
-        mealTypes: placeInfo.mealTypes && placeInfo.mealTypes.map(m => m.name),
-        hours: getHours(placeInfo),
-        latitude: placeInfo.latitude,
-        longitude: placeInfo.longitude,
-        webUrl: placeInfo.web_url,
-        website: placeInfo.website,
-        numberOfReviews: placeInfo.num_reviews,
-        rankingDenominator: placeInfo.ranking_denominator,
-        rankingString: placeInfo.ranking,
-        reviews,
-    };
+    }const place = placeInfo;
     if (global.INCLUDE_REVIEW_TAGS) {
         place.reviewTags = await getReviewTags(id);
     }
