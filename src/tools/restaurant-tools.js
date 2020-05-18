@@ -34,7 +34,7 @@ async function processRestaurant(placeInfo, client, dataset) {
     if (global.INCLUDE_REVIEW_TAGS) {
         place.reviewTags = await getReviewTags(id);
     }
-    log.debug('Data for restaurant: ', place);
+    log.debug('Data for restaurant test: ', place);
 
     if (dataset) {
         await dataset.pushData(place);
