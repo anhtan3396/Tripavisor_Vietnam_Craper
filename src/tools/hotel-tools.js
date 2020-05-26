@@ -56,6 +56,7 @@ async function processHotel(placeInfo, client, dataset) {
         rankingString: placeInfo.ranking,
         numberOfReviews: placeInfo.num_reviews,
         rankingDenominator: placeInfo.ranking_denominator,
+        photo: placeInfo.photo,
         reviews,
     };
     if (global.INCLUDE_REVIEW_TAGS) {

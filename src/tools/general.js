@@ -69,7 +69,7 @@ const processReview = (review, remoteId) => {
     let userLocation = null;
     let userContributions = null;
 
-    log.debug(`Processing review1: ${title}`);
+    log.debug(`Processing review: ${title}`);
     if (userProfile) {
         const { hometown, contributionCounts = {} } = userProfile;
         const { sumReview } = contributionCounts;
@@ -80,8 +80,19 @@ const processReview = (review, remoteId) => {
             userLocation = hometown.location.additionalNames.long;
         }
     }
-
     return review;
+
+
+    // return {
+    //     text,
+    //     title,
+    //     rating,
+    //     stayDate,
+    //     publishedDate,
+    //     userLocation,
+    //     userContributions,
+    //     remoteId,
+    // };
 };
 
 function findLastReviewIndex(reviews, dateKey) {
